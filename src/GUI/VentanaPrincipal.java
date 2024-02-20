@@ -32,6 +32,7 @@ public class VentanaPrincipal extends JFrame{
         JButton btn2 = new JButton("Cambiar de boton");
         //Funcion del boton
         btn2.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e){
                 cambiarColorBoton(btn2);
             }
