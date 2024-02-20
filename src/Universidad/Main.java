@@ -38,6 +38,7 @@ public class Main {
          */
 
         System.out.println("This is a test");
+        System.out.println("TEST 2");
 
         // Matriz
         Matriz m1 = new Matriz("2D", 2, 2);
