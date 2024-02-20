@@ -20,25 +20,21 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // TODO Auto-generated method stub
-        /*
-         * Alumno a1 = new Alumno(37,"Joel","García","Pérez","SOF","FIF");
-         * System.out.println(a1.getExpediente ()); a1.InscPracticas();
-         * System.out.println(a1.isReinscrito()); a1.Reinscripcion(9,6); //Modifica el
-         * número de materias System.out.println(a1.isReinscrito());
-         * a1.CalifCheckOut(); System.out.println(a1.getPromedioG());
-         * System.out.println(a1.getPromedioS()); System.out.println(a1.getSemestre());
-         * ImprimirVector(a1.calificaciones); System.out.println(a1.isReinscrito());
-         * a1.Reinscripcion(9,4); //Modifica el número de materias
-         * System.out.println(a1.isReinscrito()); a1.CalifCheckOut();
-         * System.out.println(a1.getPromedioG());
-         * System.out.println(a1.getPromedioS());
-         * System.out.println(a1.getSemestre());
-         * ImprimirVector(a1.calificaciones); System.out.println(a1.isReinscrito());
-         */
-
-        System.out.println("This is a test");
-        System.out.println("TEST 2");
+        
+        Alumno a1 = new Alumno(37,"Joel","García","Pérez","SOF","FIF");
+        System.out.println(a1.getExpediente ()); a1.InscPracticas();
+        System.out.println(a1.isReinscrito()); a1.Reinscripcion(9,6); //Modifica el número de materias 
+        System.out.println(a1.isReinscrito());
+        a1.CalifCheckOut(); System.out.println(a1.getPromedioG());
+        System.out.println(a1.getPromedioS()); System.out.println(a1.getSemestre());
+        ImprimirVector(a1.calificaciones); System.out.println(a1.isReinscrito());
+        a1.Reinscripcion(9,4); //Modifica el número de materias
+        System.out.println(a1.isReinscrito()); a1.CalifCheckOut();
+        System.out.println(a1.getPromedioG());
+        System.out.println(a1.getPromedioS());
+        System.out.println(a1.getSemestre());
+        ImprimirVector(a1.calificaciones); System.out.println(a1.isReinscrito());
+        
 
         // Matriz
         Matriz m1 = new Matriz("2D", 2, 2);
