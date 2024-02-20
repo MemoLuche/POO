@@ -37,6 +37,8 @@ public class Main {
          * ImprimirVector(a1.calificaciones); System.out.println(a1.isReinscrito());
          */
 
+        System.out.println("This is a test");
+
         // Matriz
         Matriz m1 = new Matriz("2D", 2, 2);
         m1.RellenarMatriz();
