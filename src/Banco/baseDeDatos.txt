@@ -1,0 +1,3 @@
+123456,Gorge Perez,Debito,1000,5000,01
+1345,Lusia Miñon,Credito,2000,6000,00
+3456,Antonio Aguilar,Debito,2000,8000,01
