@@ -76,6 +76,66 @@ public class Matriz {
         return det;
     }
 
+    public double calcularDeterminante3x3() {
+        if (this.filas == 3 && this.columnas == 3) {
+            double det = 0.0;
+
+            det += this.valores[0][0] * (this.valores[1][1] * this.valores[2][2] - this.valores[1][2] * this.valores[2][1]);
+            det -= this.valores[0][1] * (this.valores[1][0] * this.valores[2][2] - this.valores[1][2] * this.valores[2][0]);
+            det += this.valores[0][2] * (this.valores[1][0] * this.valores[2][1] - this.valores[1][1] * this.valores[2][0]);
+
+            return det;
+        } else {
+            System.out.println("Error!! La matriz no es de tamaño 3x3");
+            return 0;
+        }
+    }
+
+    // Función para calcular la determinante de una matriz 4x4
+    public double calcularDeterminante4x4() {
+        if (this.filas == 4 && this.columnas == 4) {
+            double det = 0.0;
+
+            for (int i = 0; i < 4; i++) {
+                det += this.valores[0][i] * cofactor(0, i);
+            }
+
+            return det;
+        } else {
+            System.out.println("Error!! La matriz no es de tamaño 4x4");
+            return 0;
+        }
+    }
+
+    // Función auxiliar para calcular cofactor
+    private double cofactor(int fila, int columna) {
+        int signo = (fila + columna) % 2 == 0 ? 1 : -1;
+        return signo * menor(fila, columna).calcularDeterminante3x3();
+    }
+
+    // Función auxiliar para obtener la menor de una matriz 3x3
+    private Matriz menor(int fila, int columna) {
+        Matriz submatriz = new Matriz("", 3, 3);
+
+        int subfila = 0;
+        int subcolumna = 0;
+
+        for (int i = 0; i < 4; i++) {
+            if (i != fila) {
+                subcolumna = 0;
+                for (int j = 0; j < 4; j++) {
+                    if (j != columna) {
+                        submatriz.valores[subfila][subcolumna] = this.valores[i][j];
+                        subcolumna++;
+                    }
+                }
+                subfila++;
+            }
+        }
+
+        return submatriz;
+    }
+
     // Getters/setters
     public String getNombre() {
         return nombre;
