@@ -39,10 +39,11 @@ public class Main {
         
 
         // Matriz
-        Matriz m1 = new Matriz("2D", 2, 2);
+        Matriz m1 = new Matriz("2D", 4, 4);
         m1.RellenarMatriz();
-        Matriz m2 = new Matriz("2D2", 2, 2);
-        m2.RellenarMatriz();
-        ImprimirMatriz(m1.SumarMatrices(m2));
+        //Matriz m2 = new Matriz("2D2", 2, 2);
+        //m2.RellenarMatriz();
+        System.out.println(m1.Determinante4x4());
+        //ImprimirMatriz(m1.RestaMatrices(m2));
     }
 }

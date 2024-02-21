@@ -76,7 +76,7 @@ public class Matriz {
         return det;
     }
 
-    public double calcularDeterminante3x3() {
+    public double Determinante3x3() {
         if (this.filas == 3 && this.columnas == 3) {
             double det = 0.0;
 
@@ -92,7 +92,7 @@ public class Matriz {
     }
 
     // Función para calcular la determinante de una matriz 4x4
-    public double calcularDeterminante4x4() {
+    public double Determinante4x4() {
         if (this.filas == 4 && this.columnas == 4) {
             double det = 0.0;
 
@@ -110,7 +110,7 @@ public class Matriz {
     // Función auxiliar para calcular cofactor
     private double cofactor(int fila, int columna) {
         int signo = (fila + columna) % 2 == 0 ? 1 : -1;
-        return signo * menor(fila, columna).calcularDeterminante3x3();
+        return signo * menor(fila, columna).Determinante3x3();
     }
 
     // Función auxiliar para obtener la menor de una matriz 3x3
