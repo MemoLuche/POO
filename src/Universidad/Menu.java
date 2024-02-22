@@ -188,14 +188,27 @@ public class Menu {
         Scanner sc = new Scanner(System.in);
         int opcion = 0;
         int cantidad = 0;
+        boolean cond = true;
 
         do {
             try {
-                System.out.println("Que matriz deseas multiplicar?");
-                System.out.println("1. Matriz uno");
-                System.out.println("2. Matriz dos");
-                System.out.println("3. Cancelar");
-                opcion = sc.nextInt();
+                do {
+                    try {
+                        System.out.println("Que matriz deseas multiplicar?");
+                        System.out.println("1. Matriz uno");
+                        System.out.println("2. Matriz dos");
+                        System.out.println("3. Cancelar");
+                        opcion = sc.nextInt();
+                        if (opcion != 1 && opcion != 2 && opcion != 3) {
+                            System.out.println("Seleccione una opcion valida");
+                        } else {
+                            cond = false;
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Error! Ingrese un dato de tipo entero!");
+                        sc.nextLine();
+                    }
+                } while (cond);
                 System.out.println("Por cuanto deseas multiplicar la matriz?");
                 cantidad = sc.nextInt();
                 if (opcion == 1) {
