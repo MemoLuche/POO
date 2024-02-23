@@ -66,7 +66,7 @@ public class Main {
                 case 5: Menu.MostrarMatriz(m1, m2);
                     break;
 
-                case 6:  Menu.SumarMatrices(m1, m2);
+                case 6: Menu.SumarMatrices(m1, m2);
                     break;
 
                 case 7: Menu.RestarMatrices(m1, m2);
