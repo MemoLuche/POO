@@ -5,6 +5,39 @@ import java.util.Scanner;
 
 public class Menu {
     
+    public static Matriz crearMatriz() {
+
+        Scanner sc = new Scanner(System.in);
+        int filas = 0;
+        int columnas = 0;
+        //boolean cond = true;
+
+        do {
+            try {
+                System.out.println("De cuantas filas sera la matriz?");
+                filas = sc.nextInt();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Error! Favor de ingresar un dato de tipo entero!");
+                sc.nextLine();
+            }
+        } while (true);
+        
+        do {
+            try {
+                System.out.println("De cuantas columnas sera la matriz?");
+                columnas = sc.nextInt();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Error! Favor de ingresar un dato de tipo entero!");
+                sc.nextLine();
+            }
+        } while (true);
+
+        Matriz m1 = new Matriz(filas, columnas);
+        return m1;
+    }
+
     //Todas las funciones para hacer funcionar el menu de usuario en main.java
     public static Matriz crearMatrizUno() {
 
