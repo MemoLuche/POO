@@ -7,8 +7,8 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         // Inicio de la aplicación, inicialización de objetos
-        String pathBiblioteca = "C:\\Users\\slyra\\Desktop\\biblioteca3.txt"; // ruta del archivo
-        String pathBDUsers = "C:\\Users\\slyra\\Desktop\\BD_POO.txt"; // ruta del archivo
+        String pathBiblioteca = "C:\\Users\\guill\\OneDrive\\Documentos\\PROGRAMACION\\GITHUB\\POO\\src\\Biblioteca\\biblioteca3.txt"; // ruta del archivo
+        String pathBDUsers = "C:\\Users\\guill\\OneDrive\\Documentos\\PROGRAMACION\\GITHUB\\POO\\src\\Biblioteca\\BD_POO.txt"; // ruta del archivo
         Biblioteca biblioteca = new Biblioteca();
         Libro libro = new Libro();
         BDUsuarios baseDatos = new BDUsuarios();
