@@ -21,9 +21,8 @@ public class Biblioteca {
 
     public void MostraLibrosPorGenero(String genero) {
         for (Libro libro : listaLibros) {
-            if (libro.getGenero().equals(genero)) {
+            if (libro.getGenero().equals(genero))
                 System.out.println(libro);
-            }
         }
     }
 
@@ -43,5 +42,30 @@ public class Biblioteca {
             }
         }
         return new Libro();
+    }
+
+    public void PrestarLibro(int id) {
+        Libro libroAux = this.EncontrarLibroId(id);
+        if (!libroAux.getNombre().equals("Nulo")) {
+            if (libroAux.getNumEjemplares() - 1 >= 0) {
+                libroAux.setNumEjemplares(libroAux.getNumEjemplares() - 1);
+            } else {
+                System.out.println("Imposible prestar, libro agotado");
+            }
+        } else {
+            System.out.println("Imposible prestar, libro inexistente");
+        }
+    }
+
+    @Override
+    public String toString() {
+        String contenido = "";
+        for (Libro libro : listaLibros) {
+            contenido += libro.getNombre() + ',' + libro.getAutor() + ',' + libro.getGenero() + ',' +
+                         libro.getNumPag() + ',' + libro.getAnPub() + ',' + libro.getPrecio() + ',' +
+                         libro.getNumEjemplares() + '\n';
+        }
+        contenido = contenido.trim();
+        return contenido;
     }
 }
