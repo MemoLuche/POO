@@ -17,7 +17,7 @@ public class Usuario {
         this.direccion = direccion;
         this.edad = edad;
     }
-
+ 
     @Override
     public String toString() {
         return "Nombre: " + this.nombre + "\nEstado: " + this.estado + "\nDeuda: " + this.deuda + "\nPrestamos: " + this.tieneLibro;

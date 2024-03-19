@@ -4,10 +4,6 @@ import javax.swing.*;
 
 public class VentanaLogin extends JFrame {
 
-    public VentanaLogin() {
-
-    }
-
     public VentanaLogin(int x, int y, String titulo) {
         setTitle(titulo);
         setSize(x, y);
@@ -39,7 +35,6 @@ public class VentanaLogin extends JFrame {
 
         JButton btnLogin = new JButton("Ingresar");
         btnLogin.setBounds(300 - (100) - 20, 200, 100, 20);
-
         p1.add(btnLogin);
 
         JButton btnRegistro = new JButton("Regístrate");

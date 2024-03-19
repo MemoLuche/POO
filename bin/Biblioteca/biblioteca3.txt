@@ -4,7 +4,7 @@ La Guerra de los Mundos,H.G. Wells ,Ciencia Ficción,511,2022,299.0,3
 Veinte mil Leguas de Viaje Submarino,Julio Verne ,Ciencia Ficción,326,2003,299.0,6
 Viaje al centro de la tierra,Julio Verne ,Ciencia Ficción,320,2001,240.0,2
 Tempestades de Acero,Ernst Jünger,Memorias,464,2005,1490.0,1
-The Amazing Spider-Man de David Michelin y Todd McFarlane, David Michelin, Todd McFarlane, Ciencia Ficción856, 2023, 1669, 5
+The Amazing Spider-Man de David Michelin y Todd McFarlane, David Michelin, Todd McFarlane, Ciencia Ficción, 856, 2023, 1669, 5
 Luna de Plutón,Dross,Ciencia Ficción,472,2019,150.0,3 
 El Libro Negro,Dross,Terror,232,2019,348.0,4
 Viaje al centro de la tierra, Julio Verne, Ciencia Ficción,576,1864,249.00, 2

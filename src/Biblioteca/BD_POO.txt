@@ -1,19 +1,18 @@
-Javier Tavarez,Qro,19 
-Marcos  Rodriguez, Salvatierra,26
-Elias Hernández,Aculco,19
-Renala de la Luna Llena, Raya Lucaria, 45
-Raúl Yael Contreras Vallejo, Querétaro, 20
-Andrea Elizabeth Quiterio Ibarra,CDMX ,20
-Italia  Pérez Hernández, Ecatepec, 50
-Hector Enrique Carrillo Trejo, Qro, 19
-José Diego Barrios Alcantar, Veracruz, 21
-Emilio Bolillito Salinas,CDMX,34
-Hector de Ecuador,marruecos,88
-Jose Peter Parker Perez,Chicago,19
-Radahn Azote de Estrellas, Caelid, 27
-Oscar Borrego Trigo, Venezuela,75 
-Oscar Caballero, Astora, 27
-Malenia Espada de Miquella, Liurnia Aldea de los Albinauricos, 27
-Elvis tec Lee,CDMX, 500
-José Emilio Sánchez Miñón, Querétaro, 18
-
+"javier tavarez","qro",19
+"mcos  rodriguez","salvatierra",26
+"eliaars hernández","aculco",19
+"renala de la luna llena","raya lucaria",45
+"raúl yael contreras vallejo","querétaro",20
+"andrea elizabeth quiterio ibarra","cdmx",20
+"italia pérez hernández","ecatepec",50
+"hector enrique carrillo trejo","qro",19
+"josé diego barrios alcantar","veracruz",21
+"emilio bolillito salinas","cdmx",34
+"hector de ecuador","marruecos",88
+"jose peter parker perez","chicago",19
+"radahn azote de estrellas","caelid",27
+"oscar borrego trigo","venezuela",75
+"oscar caballero","astora",27
+"malenia espada de miquella","liurnia aldea de los albinauricos",27
+"elvis tec lee","cdmx",500
+"josé emilio sánchez miñón","querétaro",18
