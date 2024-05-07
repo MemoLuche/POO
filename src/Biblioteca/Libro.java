@@ -1,35 +1,52 @@
 package Biblioteca;
 
 public class Libro {
-    static int idLibro = 1;
-    private int isbn = -1, anPub = 0, numPag = 0, numEjemplares = 0;
-    private String nombre = "Nulo", autor = "Nulo", genero = "Nulo";
-    private double precio = 0.0;
+    private static int idSiguiente = 1;
+    private int id;
+    private int isbn;
+    private int añoPublicacion;
+    private int numeroPaginas;
+    private int numeroEjemplares;
+    private String nombre;
+    private String autor;
+    private String genero;
+    private double precioRenta;
 
-    public Libro() {}
-
-    public Libro(String nombre, String autor, String genero, int numPag, int anPub, double precio, int numEjemplares) {
-        this.isbn = Libro.idLibro++;
+    public Libro(int isbn, int añoPublicacion, int numeroPaginas, int numeroEjemplares, String nombre, String autor, String genero, double precioRenta) {
+        this.id = idSiguiente++;
+        this.isbn = isbn;
+        this.añoPublicacion = añoPublicacion;
+        this.numeroPaginas = numeroPaginas;
+        this.numeroEjemplares = numeroEjemplares;
         this.nombre = nombre;
         this.autor = autor;
         this.genero = genero;
-        this.numPag = numPag;
-        this.anPub = anPub;
-        this.precio = precio;
-        this.numEjemplares = numEjemplares;
+        this.precioRenta = precioRenta;
     }
 
-    public int getNumEjemplares() {
-        return numEjemplares;
-    }
-
-    public void setNumEjemplares(int numEjemplares) {
-        this.numEjemplares = numEjemplares;
-    }
+    // Getters y setters
 
     @Override
     public String toString() {
-        return "Nombre: " + this.nombre + ", autor: " + this.autor + " numero Ejemplares: " + numEjemplares;
+        return "ID: " + id + ", ISBN: " + isbn + ", Año de Publicación: " + añoPublicacion +
+                ", Nombre: " + nombre + ", Autor: " + autor + ", Género: " + genero +
+                ", Precio de Renta: " + precioRenta + ", Ejemplares Disponibles: " + numeroEjemplares;
+    }
+
+    public static int getIdSiguiente() {
+        return idSiguiente;
+    }
+
+    public static void setIdSiguiente(int idSiguiente) {
+        Libro.idSiguiente = idSiguiente;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getIsbn() {
@@ -40,20 +57,28 @@ public class Libro {
         this.isbn = isbn;
     }
 
-    public int getAnPub() {
-        return anPub;
+    public int getAñoPublicacion() {
+        return añoPublicacion;
     }
 
-    public void setAnPub(int anPub) {
-        this.anPub = anPub;
+    public void setAñoPublicacion(int añoPublicacion) {
+        this.añoPublicacion = añoPublicacion;
     }
 
-    public int getNumPag() {
-        return numPag;
+    public int getNumeroPaginas() {
+        return numeroPaginas;
     }
 
-    public void setNumPag(int numPag) {
-        this.numPag = numPag;
+    public void setNumeroPaginas(int numeroPaginas) {
+        this.numeroPaginas = numeroPaginas;
+    }
+
+    public int getNumeroEjemplares() {
+        return numeroEjemplares;
+    }
+
+    public void setNumeroEjemplares(int numeroEjemplares) {
+        this.numeroEjemplares = numeroEjemplares;
     }
 
     public String getNombre() {
@@ -80,11 +105,11 @@ public class Libro {
         this.genero = genero;
     }
 
-    public double getPrecio() {
-        return precio;
+    public double getPrecioRenta() {
+        return precioRenta;
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    public void setPrecioRenta(double precioRenta) {
+        this.precioRenta = precioRenta;
     }
 }

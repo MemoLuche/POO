@@ -1,34 +1,45 @@
 package Biblioteca;
 
 public class Usuario {
-    static int contId = 0;
-    String nombre = "", direccion = "";
-    int idUser, edad = 0, librosPrestados = 0;
-    double deuda = 0.0;
-    boolean estado = true, tieneLibro = false, fault = false;
-
-    public Usuario() {
-
-    }
+    private static int idSiguiente = 1;
+    private int id;
+    private String nombre;
+    private String direccion;
+    private int edad;
+    private int librosPrestados;
+    private double deuda;
+    private boolean estado; // No se especifica su uso en las instrucciones
+    private boolean tieneLibro; // No se especifica su uso en las instrucciones
 
     public Usuario(String nombre, String direccion, int edad) {
-        this.idUser = ++Usuario.contId;
+        this.id = idSiguiente++;
         this.nombre = nombre;
         this.direccion = direccion;
         this.edad = edad;
     }
- 
+
+    // Getters y setters
+
     @Override
     public String toString() {
-        return "Nombre: " + this.nombre + "\nEstado: " + this.estado + "\nDeuda: " + this.deuda + "\nPrestamos: " + this.tieneLibro;
+        return "ID: " + id + ", Nombre: " + nombre + ", Dirección: " + direccion +
+                ", Edad: " + edad + ", Libros Prestados: " + librosPrestados + ", Deuda: $" + deuda;
     }
 
-    public static int getContId() {
-        return contId;
+    public static int getIdSiguiente() {
+        return idSiguiente;
     }
 
-    public static void setContId(int contId) {
-        Usuario.contId = contId;
+    public static void setIdSiguiente(int idSiguiente) {
+        Usuario.idSiguiente = idSiguiente;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -45,14 +56,6 @@ public class Usuario {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
-    }
-
-    public int getIdUser() {
-        return idUser;
-    }
-
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
     }
 
     public int getEdad() {
@@ -93,13 +96,5 @@ public class Usuario {
 
     public void setTieneLibro(boolean tieneLibro) {
         this.tieneLibro = tieneLibro;
-    }
-
-    public boolean isFault() {
-        return fault;
-    }
-
-    public void setFault(boolean fault) {
-        this.fault = fault;
     }
 }

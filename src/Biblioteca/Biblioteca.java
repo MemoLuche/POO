@@ -1,71 +1,113 @@
 package Biblioteca;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Biblioteca {
     private ArrayList<Libro> listaLibros;
+
+    public void cargarLibrosDesdeArchivo(String nombreArchivo) {
+        try {
+            File archivo = new File(nombreArchivo);
+            Scanner scanner = new Scanner(archivo);
+
+            while (scanner.hasNextLine()) {
+                String[] datos = scanner.nextLine().split(",");
+                int isbn = Integer.parseInt(datos[3].trim());
+                int anioPublicacion = Integer.parseInt(datos[4].trim());
+                int numPaginas = Integer.parseInt(datos[5].trim());
+                double precio = Double.parseDouble(datos[6].trim());
+                int ejemplares = Integer.parseInt(datos[7].trim());
+
+                Libro libro = new Libro(isbn, anioPublicacion, numPaginas, ejemplares, datos[0], datos[1], datos[2], precio);
+                listaLibros.add(libro);
+            }
+
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Archivo de libros no encontrado.");
+        }
+    }
+
+    public void guardarLibrosEnArchivo(String nombreArchivo) {
+        try {
+            FileWriter escritor = new FileWriter(nombreArchivo);
+            escritor.write(this.toString());
+            escritor.close();
+            System.out.println("Información de libros guardada en " + nombreArchivo);
+        } catch (IOException e) {
+            System.out.println("Error al guardar la información de libros en el archivo.");
+        }
+    }
 
     public Biblioteca() {
         this.listaLibros = new ArrayList<>();
     }
 
-    public void AgregarLibro(Libro libro) {
+    public void agregarLibro(Libro libro) {
         listaLibros.add(libro);
     }
 
-    public void MostraLibros() {
+    public void quitarLibro(Libro libro) {
+        listaLibros.remove(libro);
+    }
+
+    public void mostrarLibros() {
         for (Libro libro : listaLibros) {
             System.out.println(libro);
         }
     }
 
-    public void MostraLibrosPorGenero(String genero) {
+    public void mostrarLibrosPorGenero(String genero) {
         for (Libro libro : listaLibros) {
-            if (libro.getGenero().equals(genero))
+            if (libro.getGenero().equalsIgnoreCase(genero)) {
                 System.out.println(libro);
+            }
         }
     }
 
-    public Libro EncontrarLibroId(int id) {
+    public Libro encontrarLibroPorId(int id) {
         for (Libro libro : listaLibros) {
-            if (libro.getIsbn() == id) {
+            if (libro.getId() == id) {
                 return libro;
             }
         }
-        return new Libro();
+        return null; // Si no se encuentra el libro
     }
 
-    public Libro EncontrarLibroNombre(String nombre) {
+    public Libro encontrarLibroPorNombre(String nombre) {
         for (Libro libro : listaLibros) {
-            if (libro.getNombre().equals(nombre)) {
+            if (libro.getNombre().equalsIgnoreCase(nombre)) {
                 return libro;
             }
         }
-        return new Libro();
+        return null; // Si no se encuentra el libro
     }
 
-    public void PrestarLibro(int id) {
-        Libro libroAux = this.EncontrarLibroId(id);
-        if (!libroAux.getNombre().equals("Nulo")) {
-            if (libroAux.getNumEjemplares() - 1 >= 0) {
-                libroAux.setNumEjemplares(libroAux.getNumEjemplares() - 1);
+    public void prestarLibro(int id) {
+        Libro libro = encontrarLibroPorId(id);
+        if (libro != null) {
+            if (libro.getNumeroEjemplares() > 0) {
+                libro.setNumeroEjemplares(libro.getNumeroEjemplares() - 1);
+                System.out.println("Libro prestado: " + libro.getNombre());
             } else {
                 System.out.println("Imposible prestar, libro agotado");
             }
         } else {
-            System.out.println("Imposible prestar, libro inexistente");
+            System.out.println("Libro no encontrado");
         }
     }
 
     @Override
     public String toString() {
-        String contenido = "";
+        StringBuilder contenido = new StringBuilder();
         for (Libro libro : listaLibros) {
-            contenido += libro.getNombre() + ',' + libro.getAutor() + ',' + libro.getGenero() + ',' +
-                         libro.getNumPag() + ',' + libro.getAnPub() + ',' + libro.getPrecio() + ',' +
-                         libro.getNumEjemplares() + '\n';
+            contenido.append(libro).append("\n");
         }
-        contenido = contenido.trim();
-        return contenido;
+        return contenido.toString();
     }
 }
